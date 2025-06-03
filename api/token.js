@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   
     const clientId = process.env.CLIENT_ID;
     const clientSecret = process.env.CLIENT_SECRET;
-    const redirectUri = 'https://spotify-theta-blue.vercel.app/callback';
+    const redirectUri = 'https://spotify-theta-blue.vercel.app/callback.html';
   
     const authString = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
   
