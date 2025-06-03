@@ -1,6 +1,11 @@
 const clientId = 'e55397160a75484c9ba60eb25300d086';
 const redirectUri = 'https://spotify-theta-blue.vercel.app/callback.html';
-const scopes = 'user-read-currently-playing user-read-playback-state';
+const scopes = [
+  'user-read-currently-playing',
+  'user-read-playback-state',
+  'user-modify-playback-state',
+  'streaming'
+].join(' ');
 
 const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scopes)}`;
 
