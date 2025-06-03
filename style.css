@@ -1,12 +1,15 @@
 body{
 
-background-color: rgb(78, 42, 42);
+background-color: #121212;
 text-align: center;
 min-height: 100vh;
 margin: 0;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
+gap: 20px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 .main{
@@ -34,6 +37,12 @@ border: 2px solid white;
 animation: rotateDisk 10s linear infinite;
 
 }
+#title{
+
+margin: 0;
+color: white;
+
+}
 .hole{
 
 background-color: rgb(14, 14, 73);
@@ -57,6 +66,7 @@ height: 5rem;
 border-radius: 50%;
 margin-right: 30px;
 position: relative;
+border: 2px solid white;
 
 }
 .stick{
@@ -70,6 +80,7 @@ right: 100%;
 transform: translateY(-50%);
 z-index: 1;
 pointer-events: none;
+border: 2px solid white;
 
 }
 #image{
@@ -81,6 +92,28 @@ position: absolute;
 top: 0;
 left: 0;
 z-index: 1;
+
+}
+
+#login{
+
+display: block;
+margin: 20px 0;
+padding: 10px 20px;
+font-size: 1.1rem;
+cursor: pointer;
+border-radius: 20px;
+border-style: none;
+border: 1px solid white;
+background-color: #1ed760;
+font-size: 1.1rem;
+transition:0.2s ease-in-out;
+
+}
+#login:hover{
+
+transform: scale(1.1);
+box-shadow: 0px 0px 5px white;
 
 }
 

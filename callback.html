@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Now Playing...</title>
+</head>
+<body>
+  <h2>Processing login...</h2>
+
+  <script>
+    async function exchangeCodeForToken(code) {
+      try {
+        const response = await fetch(`/api/token?code=${code}`);
+        const data = await response.json();
+
+        if (data.access_token) {
+          localStorage.setItem('spotify_access_token', data.access_token);
+          // Redirect to main page or homepage
+          window.location.href = '/index.html';  // or just '/'
+        } else {
+          console.error('Failed to get access token:', data);
+          document.body.innerHTML = '<p>Error during authentication. Please try logging in again.</p>';
+        }
+      } catch (error) {
+        console.error('Error exchanging token:', error);
+        document.body.innerHTML = '<p>Unexpected error. Please try again later.</p>';
+      }
+    }
+
+    // Get authorization code from URL
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+
+    if (code) {
+      exchangeCodeForToken(code);
+    } else {
+      document.body.innerHTML = '<p>No authorization code found. Please start from the login page.</p>';
+    }
+  </script>
+</body>
+</html>
