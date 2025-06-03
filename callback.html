@@ -16,7 +16,7 @@
         if (data.access_token) {
           localStorage.setItem('spotify_access_token', data.access_token);
           // Redirect to main page or homepage
-          window.location.href = '/index.html';  // or just '/'
+          window.location.href = '/main.html';  // or just '/'
         } else {
           console.error('Failed to get access token:', data);
           document.body.innerHTML = '<p>Error during authentication. Please try logging in again.</p>';

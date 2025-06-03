@@ -8,7 +8,7 @@ function login() {
   window.location.href = authUrl;
 }
 
-async function getCurrentTrack() {
+document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('spotify_access_token');
   if (!token) return;
 
@@ -34,7 +34,7 @@ async function getCurrentTrack() {
     
     console.log(`Now playing: ${songTitle}`);
   }
-}
+});
 
 // Function to start periodic updates
 function startTrackUpdates() {
