@@ -1,4 +1,4 @@
-## Project to be updated very soon :)
+## Project to be updated on December 20225 / January 2026 :)
 
 # SPOTIFY CURRENT PLAYING
 
